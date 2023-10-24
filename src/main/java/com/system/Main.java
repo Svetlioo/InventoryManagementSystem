@@ -1,59 +1,60 @@
 package com.system;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
-import com.system.interfaces.Item;
 import com.system.itemTypes.ElectronicsItem;
+import com.system.itemTypes.GroceryItem;
 import com.system.itemTypes.InventoryItem;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        InventoryItem item = new ElectronicsItem("Item1", "opisanie", false, false, 2.50, 8);
-        InventoryItem item2 = new ElectronicsItem("Item2", "nekvo opisanie dge", false, false, 30, 4);
-        System.out.println(item.getItemDetails());
-        System.out.println(item.checkIfBreakable());
-        System.out.println(item.getQuantity());
-
-        addItemToJson(item);
-        addItemToJson(item2);
+        InventoryItem item = new ElectronicsItem("Item1", "opisanie", true, false, 2.50, 8);
+        InventoryItem item2 = new ElectronicsItem("Item2", "nekvo opisanie dge", true, false, 30, 4);
+        InventoryItem item3 = new GroceryItem("item3", "opisanie na nqkvo drugo", false, true, 50, 6);
+//        ArrayList<InventoryItem> items = loadItemsFromJson();
+        ArrayList<InventoryItem> items = new ArrayList<>();
+        items.add(item);
+        items.add(item2);
+        items.add(item3);
+        loadItemsToJson(items);
     }
 
-    public static void addItemToJson(InventoryItem item) {
+    public static void loadItemsToJson(ArrayList<InventoryItem> items) {
         File file = new File("src/main/java/com/system/itemTypes/items.json");
         ObjectMapper objectMapper = new ObjectMapper();
-        List<InventoryItem> items = new ArrayList<>();
-        try {
-            if (file.exists()) {
-//                String jsonContent = objectMapper.writeValueAsString(objectMapper.readTree(file));
-                items = objectMapper.readValue(file, new TypeReference<>() {
-                });
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if (!items.contains(item)) {
-            items.add(item);
-        }
-
         try {
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             ObjectWriter writer = objectMapper.writer(new DefaultPrettyPrinter());
             writer.writeValue(file, items);
-            System.out.println("Java object has been added to the JSON file.");
+            System.out.println("Java objects have been added to the JSON file.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public static ArrayList<InventoryItem> loadItemsFromJson() {
+        File file = new File("src/main/java/com/system/itemTypes/items.json");
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            if (file.exists()) {
+                return new ArrayList<>(Arrays.asList(objectMapper.readValue(file, InventoryItem[].class)));
+            } else {
+                return new ArrayList<>();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
+
+
 

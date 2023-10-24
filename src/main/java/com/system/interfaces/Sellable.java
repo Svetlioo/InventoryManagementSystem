@@ -1,7 +1,7 @@
 package com.system.interfaces;
 
 public interface Sellable {
-    double getItemPrice();
+    double getPrice();
 
-    void setItemPrice(double price);
+    void setPrice(double price);
 }

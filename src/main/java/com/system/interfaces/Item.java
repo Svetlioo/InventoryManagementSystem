@@ -1,9 +1,9 @@
 package com.system.interfaces;
 
 public interface Item {
-    String getItemDetails();
+    void displayItemDetails();
 
     double calculateValue();
 
-    String displayItemDescription();
+    void displayItemDescription();
 }

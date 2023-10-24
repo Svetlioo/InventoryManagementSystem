@@ -1,7 +1,31 @@
 [ {
+  "name" : "Item1",
+  "description" : "opisanie",
   "category" : "Electronics item",
-  "itemID" : "563af6be-b4a1-41cf-9910-cf830a59c6b4",
+  "breakable" : true,
+  "perishable" : false,
+  "price" : 2.5,
+  "itemID" : "dc78b652-1c62-4acb-b57f-f9419cbbe21c",
+  "quantity" : 8,
+  "value" : 20.0
+}, {
+  "name" : "Item2",
+  "description" : "nekvo opisanie dge",
+  "category" : "Electronics item",
+  "breakable" : true,
+  "perishable" : false,
+  "price" : 30.0,
+  "itemID" : "daee3103-681c-4497-8b92-2e2ded8644ee",
   "quantity" : 4,
-  "itemPrice" : 30.0,
-  "itemDetails" : "Name: Item2\nCategory: Electronics item\nDescription: nekvo opisanie dge"
+  "value" : 120.0
+}, {
+  "name" : "item3",
+  "description" : "opisanie na nqkvo drugo",
+  "category" : "Grocery Item",
+  "breakable" : false,
+  "perishable" : true,
+  "price" : 50.0,
+  "itemID" : "b04a06ce-00cd-4afb-bc8c-9cbe21a82059",
+  "quantity" : 6,
+  "value" : 300.0
 } ]

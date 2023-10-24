@@ -2,13 +2,13 @@ package com.system.itemTypes;
 
 import com.system.interfaces.*;
 
-public abstract class AbstractItem implements Item, Categorizable, Breakable, Perishable, Sellable {
+abstract class AbstractItem implements Item, Categorizable, Breakable, Perishable, Sellable {
     protected String name;
     protected String description;
     protected String category;
     protected boolean breakable;
     protected boolean perishable;
-
+    protected double price;
 
     public AbstractItem(String name, String description, String category, boolean breakable, boolean perishable, double price) {
         this.name = name;
@@ -19,17 +19,32 @@ public abstract class AbstractItem implements Item, Categorizable, Breakable, Pe
         this.price = price;
     }
 
-    protected double price;
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isBreakable() {
+        return breakable;
+    }
+
+    public boolean isPerishable() {
+        return perishable;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 
     @Override
     public boolean checkIfBreakable() {
         return this.breakable;
     }
 
-    @Override
-    public void handleItemBreakage() {
 
-    }
 
     @Override
     public void setCategory(String category) {
@@ -42,21 +57,16 @@ public abstract class AbstractItem implements Item, Categorizable, Breakable, Pe
     }
 
     @Override
-    public String getItemDetails() {
-        return String.format("""
+    public void displayItemDetails() {
+        System.out.println(String.format("""
                 Name: %s
                 Category: %s
-                Description: %s""", this.name, this.category, this.description);
+                Description: %s""", this.name, this.category, this.description));
     }
 
     @Override
-    public double calculateValue() {
-        return this.price;
-    }
-
-    @Override
-    public String displayItemDescription() {
-        return this.description;
+    public void displayItemDescription() {
+        System.out.println(this.name + ": " + this.description);
     }
 
     @Override
@@ -64,18 +74,5 @@ public abstract class AbstractItem implements Item, Categorizable, Breakable, Pe
         return this.perishable;
     }
 
-    @Override
-    public void handleItemExpiration() {
 
-    }
-
-    @Override
-    public double getItemPrice() {
-        return this.price;
-    }
-
-    @Override
-    public void setItemPrice(double price) {
-        this.price = price;
-    }
 }
