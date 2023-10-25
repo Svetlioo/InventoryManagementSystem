@@ -10,18 +10,13 @@ public class InventoryItem extends AbstractItem {
     protected int quantity;
     protected double value;
 
-    public InventoryItem(String name, String description, String category, boolean breakable, boolean perishable, double price, int quantity) {
-        super(name, description, category, breakable, perishable, price);
+    public InventoryItem(String name, String description, String category, double price, int quantity) {
+        super(name, description, category, price);
         this.quantity = quantity;
         this.itemID = UUID.randomUUID();
+        this.value = this.price * this.quantity;
     }
 
-    public InventoryItem(String name, String description, String category, boolean breakable, boolean perishable, double price, UUID itemID, int quantity, double value) {
-        super(name, description, category, breakable, perishable, price);
-        this.itemID = itemID;
-        this.quantity = quantity;
-        this.value = value;
-    }
 
     @Override
     public double calculateValue() {
@@ -34,8 +29,18 @@ public class InventoryItem extends AbstractItem {
     }
 
     @Override
+    public boolean checkIfBreakable() {
+        return false;
+    }
+
+    @Override
     public void handleItemBreakage() {
 
+    }
+
+    @Override
+    public boolean checkIsPerishable() {
+        return false;
     }
 
     @Override

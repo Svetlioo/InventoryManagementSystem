@@ -6,16 +6,13 @@ abstract class AbstractItem implements Item, Categorizable, Breakable, Perishabl
     protected String name;
     protected String description;
     protected String category;
-    protected boolean breakable;
-    protected boolean perishable;
+
     protected double price;
 
-    public AbstractItem(String name, String description, String category, boolean breakable, boolean perishable, double price) {
+    public AbstractItem(String name, String description, String category, double price) {
         this.name = name;
         this.description = description;
         this.category = category;
-        this.breakable = breakable;
-        this.perishable = perishable;
         this.price = price;
     }
 
@@ -27,22 +24,12 @@ abstract class AbstractItem implements Item, Categorizable, Breakable, Perishabl
         return description;
     }
 
-    public boolean isBreakable() {
-        return breakable;
-    }
 
-    public boolean isPerishable() {
-        return perishable;
-    }
 
     public double getPrice() {
         return price;
     }
 
-    @Override
-    public boolean checkIfBreakable() {
-        return this.breakable;
-    }
 
 
 
@@ -69,10 +56,7 @@ abstract class AbstractItem implements Item, Categorizable, Breakable, Perishabl
         System.out.println(this.name + ": " + this.description);
     }
 
-    @Override
-    public boolean checkIsPerishable() {
-        return this.perishable;
-    }
+
 
 
 }
