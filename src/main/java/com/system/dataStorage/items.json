@@ -135,38 +135,38 @@
     "price": 5.0
   },
   {
-    "itemID": "92c8e2ee-7046-418c-8845-d20d9e4a0dcc",
+    "itemID": "956819e8-3bd2-4c06-8a10-1aec812de48d",
     "quantity": 8,
     "value": 20.0,
     "name": "Item1",
-    "description": "opisanie",
+    "description": "opisanieto",
     "category": "Electronics Item",
     "price": 2.5
   },
   {
-    "itemID": "8bbe08e3-00ca-4152-9db5-de7ef833caa4",
+    "itemID": "bcaeab05-fe9a-4603-866c-944acc6485f3",
     "quantity": 4,
     "value": 120.0,
     "name": "Item2",
-    "description": "nekvo opisanie dge",
+    "description": "nqkakvo opisanie",
     "category": "Fragile Item",
     "price": 30.0
   },
   {
-    "itemID": "5a1d92e6-92d3-4c6c-bec2-3f21deaacda7",
+    "itemID": "789f18e4-e1c4-4b54-8a9d-dc11444edaf6",
     "quantity": 6,
     "value": 300.0,
     "name": "item3",
-    "description": "opisanie na nqkvo drugo ne znam pisha neshto za da e dulgo",
+    "description": "nqkakuv grocery item",
     "category": "Grocery Item",
     "price": 50.0
   },
   {
-    "itemID": "b9a2c083-fd54-45cb-a0d1-d3acb479857f",
+    "itemID": "5b8ac0a8-1647-4aca-a71a-1992a25cd582",
     "quantity": 10,
     "value": 600.0,
     "name": "item4",
-    "description": "opisanie na nqkvo dge",
+    "description": "opisanie na drug grocery item",
     "category": "Grocery Item",
     "price": 60.0
   }
