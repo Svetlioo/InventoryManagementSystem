@@ -2,11 +2,10 @@ package com.system.itemTypes;
 
 import com.system.interfaces.*;
 
-abstract class AbstractItem implements Item, Categorizable, Breakable, Perishable, Sellable {
+abstract class AbstractItem implements Item, Categorizable, Sellable {
     protected String name;
     protected String description;
     protected String category;
-
     protected double price;
 
     public AbstractItem(String name, String description, String category, double price) {
@@ -24,14 +23,9 @@ abstract class AbstractItem implements Item, Categorizable, Breakable, Perishabl
         return description;
     }
 
-
-
     public double getPrice() {
         return price;
     }
-
-
-
 
     @Override
     public void setCategory(String category) {
@@ -43,20 +37,27 @@ abstract class AbstractItem implements Item, Categorizable, Breakable, Perishabl
         return this.category;
     }
 
-    @Override
-    public void displayItemDetails() {
-        System.out.println(String.format("""
-                Name: %s
-                Category: %s
-                Description: %s""", this.name, this.category, this.description));
-    }
+//    @Override
+//    public void displayItemDetails() {
+//        System.out.println(String.format("""
+//                Name: %s
+//                Category: %s
+//                Description: %s""", this.name, this.category, this.description));
+//    }
+public void displayItemDetails() {
+    System.out.println("+" + "-".repeat(65) + "+");
+    System.out.printf("| %-63s |%n", "Name: " + this.name);
+    System.out.printf("| %-63s |%n", "Category: " + this.category);
+    System.out.printf("| %-63s |%n", "Description: " + this.description);
+    System.out.println("+" + "-".repeat(65) + "+");
+}
+
+
 
     @Override
     public void displayItemDescription() {
-        System.out.println(this.name + ": " + this.description);
+        System.out.println(this.name + ": " + this.getDescription());
     }
-
-
 
 
 }

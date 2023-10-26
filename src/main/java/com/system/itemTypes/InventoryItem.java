@@ -28,26 +28,6 @@ public class InventoryItem extends AbstractItem {
         this.price = price;
     }
 
-    @Override
-    public boolean checkIfBreakable() {
-        return false;
-    }
-
-    @Override
-    public void handleItemBreakage() {
-
-    }
-
-    @Override
-    public boolean checkIsPerishable() {
-        return false;
-    }
-
-    @Override
-    public void handleItemExpiration() {
-
-    }
-
     public double getValue() {
         return calculateValue();
     }
