@@ -9,6 +9,6 @@ public class ShoppingCart {
 
     public void addItemToShoppingCart(ItemToOrder itemOrdered) {
         cart.add(itemOrdered);
-        System.out.printf("%d %s added to shopping cart!%n", Math.abs(itemOrdered.getQuantity() - itemOrdered.getItem().getQuantity()), itemOrdered.getQuantity());
+        System.out.printf("%d %s added to shopping cart!%n", itemOrdered.getQuantity(), itemOrdered.getItem().getName());
     }
 }
