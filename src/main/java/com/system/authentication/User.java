@@ -1,4 +1,9 @@
 package com.system.authentication;
 
-public interface User extends Role{
+import com.system.itemTypes.InventoryItem;
+
+import java.util.ArrayList;
+
+public interface User extends Role {
+    void placeOrder(ArrayList<InventoryItem> items);
 }
