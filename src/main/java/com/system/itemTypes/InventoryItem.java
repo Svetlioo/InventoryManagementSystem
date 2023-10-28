@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 public class InventoryItem extends AbstractItem {
+
     protected UUID itemID;
     protected int quantity;
     protected double value;
@@ -16,7 +17,6 @@ public class InventoryItem extends AbstractItem {
         this.itemID = UUID.randomUUID();
         this.value = this.price * this.quantity;
     }
-
 
     @Override
     public double calculateValue() {
@@ -47,6 +47,5 @@ public class InventoryItem extends AbstractItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
 
 }

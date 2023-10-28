@@ -1,7 +1,12 @@
 package com.system.interfaces;
 
 public interface Perishable {
-    boolean checkIsPerishable();
+
+    void perishOneItem();
+
+    void perishAll();
 
     void handleItemExpiration();
+
+    double sellPerishedItems();
 }
