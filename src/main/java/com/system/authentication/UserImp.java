@@ -12,6 +12,7 @@ import static com.system.orders.ItemToOrder.chooseItem;
 import static com.system.orders.ItemToOrder.hasEnoughQuantity;
 
 public class UserImp implements User {
+
     private String username;
     private String password;
     private ShoppingCart cart;
@@ -19,6 +20,14 @@ public class UserImp implements User {
     public UserImp(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public ShoppingCart getCart() {
+        return cart;
+    }
+
+    public void setCart(ShoppingCart cart) {
+        this.cart = cart;
     }
 
     @Override
@@ -47,5 +56,16 @@ public class UserImp implements User {
             }
         }
         this.cart.addItemToShoppingCart(new ItemToOrder(chosenItem, 3));
+    }
+
+
+    @Override
+    public void addToShoppingCart(ItemToOrder item) {
+
+    }
+
+    @Override
+    public void removeItemFromCartByName(String name) {
+
     }
 }
