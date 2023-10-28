@@ -60,4 +60,7 @@ public void displayItemDetails() {
     }
 
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -1,7 +1,12 @@
 package com.system.interfaces;
 
 public interface Breakable {
-    boolean checkIfBreakable();
 
-    void handleItemBreakage();
+    void breakItem();
+
+    void discardBrokenItems();
+
+    boolean hasBrokenItems();
+
+    double sellBrokenItems();
 }
