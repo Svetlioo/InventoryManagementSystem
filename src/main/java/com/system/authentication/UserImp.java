@@ -41,7 +41,12 @@ public class UserImp implements User {
     }
 
     @Override
-    public void placeOrder(ArrayList<InventoryItem> items) {
+    public void placeOrder() {
+
+    }
+
+    @Override
+    public void addToShoppingCart(ArrayList<InventoryItem> items) {
         Scanner sc = new Scanner(System.in);
         InventoryItem chosenItem = null;
         while (chosenItem == null) {
@@ -58,14 +63,30 @@ public class UserImp implements User {
         this.cart.addItemToShoppingCart(new ItemToOrder(chosenItem, 3));
     }
 
-
     @Override
-    public void addToShoppingCart(ItemToOrder item) {
+    public void removeItemFromCartByName(String name) {
+        for (ItemToOrder item : cart.getCart()) {
+            if (item.getItem().getName().equals(name)) {
+                this.cart.removeItemFromShoppingCart(item);
+            }
+        }
+
+    }
+
+    public void changeItemQuantityByName(String name, int quantity) {
+        for (ItemToOrder item : this.cart.getCart()) {
+            if (item.getItem().getName().equals(name)) {
+                this.cart.changeQuantityOfProduct(item, quantity);
+            }
+        }
 
     }
 
     @Override
-    public void removeItemFromCartByName(String name) {
+    public void displayShoppingCart() {
+        for (ItemToOrder item : this.cart.getCart()) {
+            System.out.printf("%d %s%n", item.getQuantity(), item.getItem().getName());
+        }
 
     }
 }

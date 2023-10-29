@@ -2,7 +2,7 @@ package com.system.authentication;
 
 import com.system.itemTypes.InventoryItem;
 
-public interface Admin extends Role {
+public interface Admin extends User {
 
     void setPriceOfProduct(InventoryItem item, double price);
 

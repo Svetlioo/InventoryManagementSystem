@@ -2,13 +2,22 @@ package com.system.authentication;
 
 import com.system.itemTypes.InventoryItem;
 import com.system.orders.ItemToOrder;
+import com.system.orders.ShoppingCart;
 
 import java.util.ArrayList;
 
-public interface User extends Role {
-    void placeOrder(ArrayList<InventoryItem> items);
+public interface User {
+    String getUsername();
 
-    void addToShoppingCart(ItemToOrder item);
+    String getPassword();
+
+    void placeOrder();
+
+    void addToShoppingCart(ArrayList<InventoryItem> items);
 
     void removeItemFromCartByName(String name);
+
+    void changeItemQuantityByName(String name, int quantity);
+
+    void displayShoppingCart();
 }
