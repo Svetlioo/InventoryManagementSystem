@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ItemToOrder {
+
     private InventoryItem item;
     private int quantity;
 
     public static InventoryItem chooseItem(ArrayList<InventoryItem> items, String name, int quantity) {
         Scanner sc = new Scanner(System.in);
         for (InventoryItem item : items) {
-            if (item.getName().toLowerCase().equals(name.toLowerCase())) {
+            if (item.getName().equalsIgnoreCase(name)) {
                 return item;
             }
         }
@@ -32,6 +33,10 @@ public class ItemToOrder {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public static boolean hasEnoughQuantity(InventoryItem item, int quantity) {
