@@ -7,7 +7,7 @@ public class FragileItem extends InventoryItem implements Breakable {
     int brokenQuantity;
 
     public FragileItem(String name, String description, double price, int quantity, double weight) {
-        super(name, description, "Fragile Item", price, quantity);
+        super(name, description, "Fragile", price, quantity);
         this.weight = weight;
         this.brokenQuantity = 0;
     }

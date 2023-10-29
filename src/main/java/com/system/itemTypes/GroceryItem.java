@@ -8,7 +8,7 @@ public class GroceryItem extends InventoryItem implements Perishable {
     private int perishedItems;
 
     public GroceryItem(String name, String description, double price, int quantity, int calories) {
-        super(name, description, "Grocery Item", price, quantity);
+        super(name, description, "Grocery", price, quantity);
         this.calories = calories;
         this.perishedItems = 0;
     }

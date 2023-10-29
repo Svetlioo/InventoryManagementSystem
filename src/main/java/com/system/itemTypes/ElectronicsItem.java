@@ -8,7 +8,7 @@ public class ElectronicsItem extends InventoryItem implements Breakable, Repaira
     int brokenQuantity;
 
     public ElectronicsItem(String name, String description, double price, int quantity) {
-        super(name, description, "Electronics Item", price, quantity);
+        super(name, description, "Electronics", price, quantity);
         this.brokenQuantity = 0;
     }
 
