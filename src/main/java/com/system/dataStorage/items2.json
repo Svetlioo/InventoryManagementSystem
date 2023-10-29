@@ -1,0 +1,173 @@
+[
+  {
+    "itemID": "123e4567-e89b-12d3-a456-426655440000",
+    "quantity": 10,
+    "value": 400.0,
+    "name": "iPhone 13",
+    "description": "High-end smartphone with cutting-edge features.",
+    "category": "Electronics Item",
+    "price": 40.0
+  },
+  {
+    "itemID": "223e4567-e89b-12d3-a456-426655440001",
+    "quantity": 8,
+    "value": 800.0,
+    "name": "Dell XPS 15",
+    "description": "Powerful laptop for work and entertainment.",
+    "category": "Electronics Item",
+    "price": 100.0
+  },
+  {
+    "itemID": "323e4567-e89b-12d3-a456-426655440002",
+    "quantity": 12,
+    "value": 120.0,
+    "name": "Sony WH-1000XM4",
+    "description": "Noise-canceling headphones for immersive audio.",
+    "category": "Electronics Item",
+    "price": 10.0
+  },
+  {
+    "itemID": "423e4567-e89b-12d3-a456-426655440003",
+    "quantity": 7,
+    "value": 300.0,
+    "name": "iPad Air",
+    "description": "Versatile tablet for work and play.",
+    "category": "Electronics Item",
+    "price": 30.0
+  },
+  {
+    "itemID": "523e4567-e89b-12d3-a456-426655440004",
+    "quantity": 10,
+    "value": 600.0,
+    "name": "Canon EOS 80D",
+    "description": "DSLR camera for photography enthusiasts.",
+    "category": "Electronics Item",
+    "price": 60.0
+  },
+  {
+    "itemID": "623e4567-e89b-12d3-a456-426655440005",
+    "quantity": 5,
+    "value": 100.0,
+    "name": "Elegant Crystal Vase",
+    "description": "Delicate crystal vase, handle with care.",
+    "category": "Fragile Item",
+    "price": 20.0
+  },
+  {
+    "itemID": "723e4567-e89b-12d3-a456-426655440006",
+    "quantity": 6,
+    "value": 150.0,
+    "name": "Royal Doulton Dinner Set",
+    "description": "Exquisite fine china dinner set, collectible.",
+    "category": "Fragile Item",
+    "price": 25.0
+  },
+  {
+    "itemID": "823e4567-e89b-12d3-a456-426655440007",
+    "quantity": 9,
+    "value": 200.0,
+    "name": "Grandfather\u0027s Antique Clock",
+    "description": "Vintage clock with fragile mechanisms.",
+    "category": "Fragile Item",
+    "price": 40.0
+  },
+  {
+    "itemID": "923e4567-e89b-12d3-a456-426655440008",
+    "quantity": 8,
+    "value": 250.0,
+    "name": "Handcrafted Glass Sculpture",
+    "description": "Intricate glass artwork, handle with care.",
+    "category": "Fragile Item",
+    "price": 50.0
+  },
+  {
+    "itemID": "023e4567-e89b-12d3-a456-042665544009",
+    "quantity": 7,
+    "value": 80.0,
+    "name": "Vintage Porcelain Figurine",
+    "description": "Collectible porcelain figurine, fragile.",
+    "category": "Fragile Item",
+    "price": 16.0
+  },
+  {
+    "itemID": "123e4567-e89b-12d3-a456-042665544001",
+    "quantity": 15,
+    "value": 30.0,
+    "name": "Fresh Organic Apples",
+    "description": "Locally grown, pesticide-free apples.",
+    "category": "Grocery Item",
+    "price": 2.0
+  },
+  {
+    "itemID": "223e4567-e89b-12d3-a456-042665544001",
+    "quantity": 20,
+    "value": 25.0,
+    "name": "Premium Pasta Selection",
+    "description": "Assorted pasta for delicious meals.",
+    "category": "Grocery Item",
+    "price": 1.25
+  },
+  {
+    "itemID": "323e4567-e89b-12d3-a456-042665544002",
+    "quantity": 30,
+    "value": 45.0,
+    "name": "Hearty Tomato Soup",
+    "description": "Warm and comforting canned soup.",
+    "category": "Grocery Item",
+    "price": 1.5
+  },
+  {
+    "itemID": "423e4567-e89b-12d3-a456-042665544013",
+    "quantity": 12,
+    "value": 60.0,
+    "name": "Wild-caught Salmon Fillets",
+    "description": "High-quality, fresh salmon for your recipes.",
+    "category": "Grocery Item",
+    "price": 5.0
+  },
+  {
+    "itemID": "523e4567-e89b-12d3-a456-042665544014",
+    "quantity": 8,
+    "value": 40.0,
+    "name": "Gourmet Coffee Beans",
+    "description": "Aromatic coffee beans for coffee lovers.",
+    "category": "Grocery Item",
+    "price": 5.0
+  },
+  {
+    "itemID": "956819e8-3bd2-4c06-8a10-1aec812de48d",
+    "quantity": 8,
+    "value": 20.0,
+    "name": "Item1",
+    "description": "opisanieto",
+    "category": "Electronics Item",
+    "price": 2.5
+  },
+  {
+    "itemID": "bcaeab05-fe9a-4603-866c-944acc6485f3",
+    "quantity": 4,
+    "value": 120.0,
+    "name": "Item2",
+    "description": "nqkakvo opisanie",
+    "category": "Fragile Item",
+    "price": 30.0
+  },
+  {
+    "itemID": "789f18e4-e1c4-4b54-8a9d-dc11444edaf6",
+    "quantity": 6,
+    "value": 300.0,
+    "name": "item3",
+    "description": "nqkakuv grocery item",
+    "category": "Grocery Item",
+    "price": 50.0
+  },
+  {
+    "itemID": "5b8ac0a8-1647-4aca-a71a-1992a25cd582",
+    "quantity": 10,
+    "value": 600.0,
+    "name": "item4",
+    "description": "opisanie na drug grocery item",
+    "category": "Grocery Item",
+    "price": 60.0
+  }
+]

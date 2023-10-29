@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Logic {
-    private static final ArrayList<Role> users = new ArrayList<>();
-    private Role currentUser;
+    private static final ArrayList<User> users = new ArrayList<>();
+    private User currentUser;
 
     public static void loadUserProfiles() {
         users.clear();
@@ -31,7 +31,7 @@ public class Logic {
 
     public static String registerUser(String username, String password) {
         boolean isNotRegistered = true;
-        for (Role user : users) {
+        for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 isNotRegistered = false;
                 break;
@@ -69,8 +69,8 @@ public class Logic {
         }
     }
 
-    public static Role loginUser(String username, String password) {
-        for (Role user : users) {
+    public static User loginUser(String username, String password) {
+        for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return user;
             }
