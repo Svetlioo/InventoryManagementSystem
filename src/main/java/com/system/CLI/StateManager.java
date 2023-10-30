@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import static com.system.authentication.Logic.*;
 import static com.system.dataStorage.ItemDataManager.loadItemsFromJson;
+import static com.system.helperMethods.Methods.exitInput;
 import static com.system.helperMethods.Methods.showLoginChoices;
 
 public class StateManager {
@@ -96,6 +97,8 @@ public class StateManager {
                     for (var i : this.items) {
                         i.displayItemDetails();
                     }
+
+                    exitInput();
                     break;
                 case 2:
                     ItemCategory selectedCategory = null;
@@ -128,6 +131,7 @@ public class StateManager {
                         }
                     }
 
+                    exitInput();
                     break;
                 case 3:
                     this.currentUser.addToShoppingCart(this.items);

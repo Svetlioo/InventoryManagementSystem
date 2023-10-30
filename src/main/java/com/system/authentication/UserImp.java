@@ -20,6 +20,7 @@ public class UserImp implements User {
     public UserImp(String username, String password) {
         this.username = username;
         this.password = password;
+        this.cart = new ShoppingCart(this);
     }
 
     public ShoppingCart getCart() {
@@ -49,26 +50,50 @@ public class UserImp implements User {
     public void addToShoppingCart(ArrayList<InventoryItem> items) {
         Scanner sc = new Scanner(System.in);
         InventoryItem chosenItem = null;
+        int quantity = 0;
+        boolean isValid = false;
         while (chosenItem == null) {
+            System.out.println("Type \"exit\" to go back to main menu!");
             System.out.println("Enter name of the item you want to buy.");
             String name = sc.nextLine();
-            System.out.println("Enter quantity: ");
-            int quantity = sc.nextInt();
-            chosenItem = chooseItem(items, name, quantity);
+            if (name.equalsIgnoreCase("exit")) return; // Going back to main menu
+            while (!isValid || quantity == 0) {
+                System.out.println("Enter quantity: ");
+                try {
+                    quantity = Integer.parseInt(sc.nextLine());
+                    isValid = true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid choice. Please enter a valid numeric option.");
+                }
+            }
+            chosenItem = chooseItem(items, name);
             if (chosenItem != null && !hasEnoughQuantity(chosenItem, quantity)) {
                 chosenItem = null;
                 System.out.println("Not enough quantity! Enter less quantity or order another product.");
             }
+            if (chosenItem == null) {
+                System.out.println("Invalid item name!");
+            }
         }
-        this.cart.addItemToShoppingCart(new ItemToOrder(chosenItem, 3));
+        this.cart.addItemToShoppingCart(new ItemToOrder(chosenItem, quantity));
     }
 
     @Override
     public void removeItemFromCartByName(String name) {
-        for (ItemToOrder item : cart.getCart()) {
-            if (item.getItem().getName().equals(name)) {
-                this.cart.removeItemFromShoppingCart(item);
+        boolean isValid = false;
+        while (!isValid) {
+            for (ItemToOrder item : cart.getCart()) {
+                if (item.getItem().getName().equals(name)) {
+                    this.cart.removeItemFromShoppingCart(item);
+                    isValid = true;
+                }
             }
+            if (!isValid) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("No such item in cart. Enter valid item name!");
+                name = sc.nextLine();
+            }
+
         }
 
     }
