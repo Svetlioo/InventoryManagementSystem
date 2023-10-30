@@ -10,7 +10,7 @@ public class ItemToOrder {
     private InventoryItem item;
     private int quantity;
 
-    public static InventoryItem chooseItem(ArrayList<InventoryItem> items, String name, int quantity) {
+    public static InventoryItem chooseItem(ArrayList<InventoryItem> items, String name) {
         Scanner sc = new Scanner(System.in);
         for (InventoryItem item : items) {
             if (item.getName().equalsIgnoreCase(name)) {

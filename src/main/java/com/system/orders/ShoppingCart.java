@@ -20,7 +20,16 @@ public class ShoppingCart {
     }
 
     public void addItemToShoppingCart(ItemToOrder itemOrdered) {
-        cart.add(itemOrdered);
+        boolean itemAlreadyAdded = false;
+        for (ItemToOrder item : this.cart) {
+            if (item.getItem().getName().equals(itemOrdered.getItem().getName())) {
+                item.setQuantity(item.getQuantity() + itemOrdered.getQuantity());
+                itemAlreadyAdded = true;
+            }
+        }
+        if (!itemAlreadyAdded) {
+            cart.add(itemOrdered);
+        }
         System.out.printf("%d %s added to shopping cart!%n", itemOrdered.getQuantity(), itemOrdered.getItem().getName());
     }
 

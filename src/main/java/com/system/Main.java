@@ -1,6 +1,7 @@
 package com.system;
 
 import com.system.CLI.StateManager;
+import com.system.helperMethods.Methods;
 import com.system.itemTypes.ElectronicsItem;
 import com.system.itemTypes.FragileItem;
 import com.system.itemTypes.GroceryItem;
@@ -12,15 +13,11 @@ import static com.system.dataStorage.ItemDataManager.*;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("""
-                Test account:
-                username: test
-                password: 123
-                """);
+        Methods.displayTestAccount();
         StateManager state = new StateManager();
         state.beforeLoginState();
         state.mainState();
+
 //        InventoryItem item = new ElectronicsItem("Item1", "opisanieto", 2.50, 8);
 //        InventoryItem item2 = new FragileItem("Item2", "nqkakvo opisanie", 30, 4, 50);
 //        InventoryItem item3 = new GroceryItem("item3", "nqkakuv grocery item", 50, 6, 500);
