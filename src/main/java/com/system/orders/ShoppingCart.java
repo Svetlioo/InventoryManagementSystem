@@ -22,7 +22,7 @@ public class ShoppingCart {
     public void addItemToShoppingCart(ItemToOrder itemOrdered) {
         boolean itemAlreadyAdded = false;
         for (ItemToOrder item : this.cart) {
-            if (item.getItem().getName().equals(itemOrdered.getItem().getName())) {
+            if (item.getItem().getName().equalsIgnoreCase(itemOrdered.getItem().getName())) {
                 item.setQuantity(item.getQuantity() + itemOrdered.getQuantity());
                 itemAlreadyAdded = true;
             }
@@ -38,7 +38,17 @@ public class ShoppingCart {
         System.out.printf("%s removed from shopping cart!%n", itemOrdered.getItem().getName());
     }
 
-    public void changeQuantityOfProduct(ItemToOrder itemOrdered, int quantity) {
-        itemOrdered.setQuantity(quantity);
+    public boolean changeQuantityOfProduct(ItemToOrder itemOrdered, int quantity) {
+        if (itemOrdered.getItem().getQuantity() + itemOrdered.getQuantity() >= quantity) {
+            itemOrdered.setQuantity(quantity);
+            itemOrdered.getItem().setQuantity(quantity);
+        } else {
+            System.out.printf("Not enough items! Only %d %s left!%n", itemOrdered.getItem().getQuantity(), itemOrdered.getItem().getName());
+            System.out.printf("Max items that you can add: %d%n", itemOrdered.getQuantity() + itemOrdered.getItem().getQuantity());
+            return false;
+        }
+
+        System.out.printf("%s item quantity changed to %d %n", itemOrdered.getItem().getName(), quantity);
+        return true;
     }
 }

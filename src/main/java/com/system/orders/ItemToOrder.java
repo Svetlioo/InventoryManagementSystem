@@ -36,6 +36,7 @@ public class ItemToOrder {
     }
 
     public void setQuantity(int quantity) {
+        this.item.setQuantity(this.item.getQuantity() + this.quantity - quantity);
         this.quantity = quantity;
     }
 
