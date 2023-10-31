@@ -21,10 +21,20 @@ public class Methods {
     }
 
     public static void displayTestAccount() {
-        System.out.println("Test account");
-        System.out.println("username: test");
-        System.out.println("password: 123");
-        System.out.println();
+//        System.out.println("         Test accounts         ");
+//        System.out.println("username: test          ");
+//        System.out.println("password: 123           ");
+//        System.out.println();
+        System.out.println("Test Accounts:");
+        System.out.println("-".repeat(20));
+        System.out.println("User account:");
+        System.out.printf("%s %s%n", "Username:", "test");
+        System.out.printf("%s %s%n", "Password:", "123");
+        System.out.println("-".repeat(20));
+        System.out.println("Admin account:");
+        System.out.printf("%s %s%n", "Username:", "admin");
+        System.out.printf("%s %s%n", "Password:", "tainaparola");
+        System.out.println("-".repeat(20));
     }
 
     public static void exitInput() {

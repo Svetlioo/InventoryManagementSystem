@@ -17,7 +17,7 @@ public interface User {
 
     void removeItemFromCartByName(String name);
 
-    void changeItemQuantityByName(String name, int quantity);
+    void changeItemQuantityByName();
 
     void displayShoppingCart();
 }

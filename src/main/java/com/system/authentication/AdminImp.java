@@ -5,12 +5,11 @@ import com.system.orders.ShoppingCart;
 
 public class AdminImp extends UserImp implements Admin {
 
-    private String username;
-    private String password;
     private ShoppingCart cart;
 
     public AdminImp(String username, String password) {
         super(username, password);
+        this.cart = new ShoppingCart(this);
     }
 
     @Override

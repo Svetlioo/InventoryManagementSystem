@@ -2,6 +2,7 @@ package com.system.authentication;
 
 import com.system.itemTypes.InventoryItem;
 import com.system.orders.ItemToOrder;
+import com.system.orders.Order;
 import com.system.orders.ShoppingCart;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class UserImp implements User {
     private String username;
     private String password;
     private ShoppingCart cart;
+    private ArrayList<Order> orders;
 
     public UserImp(String username, String password) {
         this.username = username;
@@ -44,6 +46,7 @@ public class UserImp implements User {
     @Override
     public void placeOrder() {
 
+        System.out.println("Order placed!");
     }
 
     @Override
@@ -67,12 +70,16 @@ public class UserImp implements User {
                 }
             }
             chosenItem = chooseItem(items, name);
-            if (chosenItem != null && !hasEnoughQuantity(chosenItem, quantity)) {
-                chosenItem = null;
-                System.out.println("Not enough quantity! Enter less quantity or order another product.");
-            }
+
             if (chosenItem == null) {
                 System.out.println("Invalid item name!");
+            }
+            if (chosenItem != null && !hasEnoughQuantity(chosenItem, quantity)) {
+                System.out.printf("Not enough quantity! Only %d %s left!%n", chosenItem.getQuantity(), chosenItem.getName());
+                System.out.println("Enter less quantity or order another product.");
+                chosenItem = null;
+                isValid = false;
+                quantity = 0;
             }
         }
         this.cart.addItemToShoppingCart(new ItemToOrder(chosenItem, quantity));
@@ -88,6 +95,7 @@ public class UserImp implements User {
                     isValid = true;
                 }
             }
+
             if (!isValid) {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("No such item in cart. Enter valid item name!");
@@ -98,17 +106,53 @@ public class UserImp implements User {
 
     }
 
-    public void changeItemQuantityByName(String name, int quantity) {
-        for (ItemToOrder item : this.cart.getCart()) {
-            if (item.getItem().getName().equals(name)) {
-                this.cart.changeQuantityOfProduct(item, quantity);
+    public void changeItemQuantityByName() {
+        if (this.cart.getCart().isEmpty()) {
+            System.out.println("Shopping cart is empty!");
+            return;
+        }
+        System.out.println("Your shopping cart: ");
+        displayShoppingCart();
+        Scanner sc = new Scanner(System.in);
+        boolean isValid = false;
+        boolean enoughQuantity = false;
+        while (!isValid || !enoughQuantity) {
+            try {
+                System.out.print("Enter the name of the item you want to change quantity: ");
+                String itemNameToChange = sc.nextLine();
+                System.out.print("Enter the new quantity: ");
+                int newQuantity = Integer.parseInt(sc.nextLine());
+                isValid = true;
+                boolean itemFound = false;
+                while (!itemFound) {
+                    for (ItemToOrder item : this.cart.getCart()) {
+                        if (item.getItem().getName().equalsIgnoreCase(itemNameToChange)) {
+                            itemFound = true;
+                            if (this.cart.changeQuantityOfProduct(item, newQuantity)) {
+                                enoughQuantity = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (!itemFound) {
+                        System.out.println("Invalid item name!");
+                        isValid = false;
+                        break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid choice. Please enter a valid numeric option.");
             }
         }
-
     }
+
 
     @Override
     public void displayShoppingCart() {
+        if (this.cart.getCart().isEmpty()) {
+            System.out.println("Shopping cart is empty!");
+            return;
+        }
         for (ItemToOrder item : this.cart.getCart()) {
             System.out.printf("%d %s%n", item.getQuantity(), item.getItem().getName());
         }
