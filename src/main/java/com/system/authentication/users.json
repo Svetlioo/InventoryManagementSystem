@@ -1,36 +1,30 @@
 {
-  "users": [
-    {
-      "username": "user1",
-      "password": "123"
-    },
-    {
-      "username": "user2",
-      "password": "123"
-    },
-    {
-      "username": "testtt",
-      "password": "3"
-    },
-    {
-      "username": "az",
-      "password": "123"
-    },
-    {
-      "username": "nqkoi",
-      "password": "1234"
-    },
-    {
-      "username": "test",
-      "password": "123"
-    },
-    {
-      "username": "testt",
-      "password": "1234"
-    },
-    {
-      "username": "ne znam",
-      "password": "345"
-    }
-  ]
+  "users" : [ {
+    "username" : "user1",
+    "password" : "123"
+  }, {
+    "username" : "user2",
+    "password" : "123"
+  }, {
+    "username" : "testtt",
+    "password" : "3"
+  }, {
+    "username" : "az",
+    "password" : "123"
+  }, {
+    "username" : "nqkoi",
+    "password" : "1234"
+  }, {
+    "username" : "test",
+    "password" : "123"
+  }, {
+    "username" : "testt",
+    "password" : "1234"
+  }, {
+    "username" : "ne znam",
+    "password" : "345"
+  }, {
+    "username" : "djami",
+    "password" : "123"
+  } ]
 }

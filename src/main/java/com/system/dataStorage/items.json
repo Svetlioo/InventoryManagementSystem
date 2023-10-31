@@ -6,8 +6,7 @@
     "name": "Smartwatch",
     "description": "High-quality smartwatch",
     "category": "Electronics",
-    "price": 40.0,
-    "brokenQuantity": 0
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440002",
@@ -16,8 +15,7 @@
     "name": "Wireless Earbuds",
     "description": "Wireless earbuds with noise-cancellation",
     "category": "Electronics",
-    "price": 30.0,
-    "brokenQuantity": 1
+    "price": 30.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440003",
@@ -26,8 +24,7 @@
     "name": "Tablet",
     "description": "Large tablet with stylus support",
     "category": "Electronics",
-    "price": 40.0,
-    "brokenQuantity": 0
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440004",
@@ -36,8 +33,7 @@
     "name": "Gaming Console",
     "description": "Next-gen gaming console with graphics",
     "category": "Electronics",
-    "price": 40.0,
-    "brokenQuantity": 3
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440011",
@@ -46,9 +42,7 @@
     "name": "Delicate Glassware",
     "description": "Fragile glassware set with intricate designs.",
     "category": "Fragile",
-    "price": 40.0,
-    "weight": 1.5,
-    "brokenQuantity": 0
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440012",
@@ -57,9 +51,7 @@
     "name": "Antique Porcelain",
     "description": "Rare antique porcelain figurines.",
     "category": "Fragile",
-    "price": 30.0,
-    "weight": 0.8,
-    "brokenQuantity": 1
+    "price": 30.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440013",
@@ -68,9 +60,7 @@
     "name": "Crystal Vase",
     "description": "Exquisite crystal vase for elegant decor.",
     "category": "Fragile",
-    "price": 40.0,
-    "weight": 2.0,
-    "brokenQuantity": 0
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440014",
@@ -79,9 +69,7 @@
     "name": "Fragile Artwork",
     "description": "Framed artwork with delicate paintwork.",
     "category": "Fragile",
-    "price": 40.0,
-    "weight": 1.2,
-    "brokenQuantity": 3
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440021",
@@ -90,9 +78,7 @@
     "name": "Fresh Apples",
     "description": "Crisp and juicy apples for a healthy snack.",
     "category": "Grocery",
-    "price": 40.0,
-    "calories": 52,
-    "perishedItems": 0
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440022",
@@ -101,9 +87,7 @@
     "name": "Whole Grain Bread",
     "description": "Nutritious whole grain bread for sandwiches.",
     "category": "Grocery",
-    "price": 30.0,
-    "calories": 70,
-    "perishedItems": 1
+    "price": 30.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440023",
@@ -112,9 +96,7 @@
     "name": "Fresh Milk",
     "description": "Farm-fresh milk for your daily needs.",
     "category": "Grocery",
-    "price": 40.0,
-    "calories": 80,
-    "perishedItems": 0
+    "price": 40.0
   },
   {
     "itemID": "223e4567-e89b-12d3-a456-426655440024",
@@ -123,8 +105,6 @@
     "name": "Leafy Greens",
     "description": "Organic leafy greens for a healthy salad.",
     "category": "Grocery",
-    "price": 40.0,
-    "calories": 10,
-    "perishedItems": 3
+    "price": 40.0
   }
 ]

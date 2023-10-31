@@ -15,29 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Methods.displayTestAccount();
         StateManager state = new StateManager();
-        state.beforeLoginState();
-        state.mainState();
-
-//        InventoryItem item = new ElectronicsItem("Item1", "opisanieto", 2.50, 8);
-//        InventoryItem item2 = new FragileItem("Item2", "nqkakvo opisanie", 30, 4, 50);
-//        InventoryItem item3 = new GroceryItem("item3", "nqkakuv grocery item", 50, 6, 500);
-//        InventoryItem item4 = new GroceryItem("item4", "opisanie na drug grocery item", 60, 10, 300);
-//        ArrayList<InventoryItem> items = loadItemsFromJson();
-//        addItemToList(item, items);
-//        addItemToList(item2, items);
-//        addItemToList(item3, items);
-//        addItemToList(item4, items);
-//        for (var i : items) {
-//            i.displayItemDetails();
-//        }
-//        for (var i : items) {
-//            if (i.getCategory().equals("Electronics Item")) {
-//                i.displayItemDetails();
-//            }
-//        }
-//        loadItemsToJson(items);
+        state.start();
     }
-
-
 }
 
