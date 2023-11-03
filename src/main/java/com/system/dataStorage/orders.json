@@ -1,0 +1,20 @@
+[
+  {
+    "date": "Nov 3, 2023, 7:38:35 PM",
+    "totalPrice": 120.0,
+    "items": [
+      {
+        "item": {
+          "itemID": "223e4567-e89b-12d3-a456-426655440003",
+          "quantity": 5,
+          "value": 320.0,
+          "name": "Tablet",
+          "description": "Large tablet with stylus support",
+          "category": "Electronics",
+          "price": 40.0
+        },
+        "quantity": 3
+      }
+    ]
+  }
+]

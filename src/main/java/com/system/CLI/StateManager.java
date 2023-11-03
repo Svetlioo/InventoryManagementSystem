@@ -13,6 +13,7 @@ import java.util.Scanner;
 import static com.system.authentication.Logic.*;
 import static com.system.dataStorage.ItemDataManager.loadItemsFromJson;
 import static com.system.dataStorage.ItemDataManager.loadItemsToJson;
+import static com.system.dataStorage.OrderManager.loadOrdersToJson;
 import static com.system.helperMethods.Methods.exitInput;
 import static com.system.helperMethods.Methods.showLoginChoices;
 
@@ -31,6 +32,7 @@ public class StateManager {
     public void start() {
         beforeLoginState();
     }
+
     public void beforeLoginState() {
         Scanner sc = new Scanner(System.in);
         loadUserProfiles();
@@ -169,7 +171,13 @@ public class StateManager {
                     this.currentUser.displayShoppingCart();
                     break;
                 case 7:
+                    if (this.currentUser.getCart().getCart().isEmpty()) {
+                        System.out.println("Shopping cart is empty!");
+                        System.out.println("Add something to place a order.");
+                        break;
+                    }
                     this.currentUser.placeOrder();
+                    loadOrdersToJson(this.currentUser.getOrders());
                     break;
                 case 8:
                     this.currentUser = null;

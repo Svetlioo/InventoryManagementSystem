@@ -6,6 +6,7 @@ import com.system.orders.Order;
 import com.system.orders.ShoppingCart;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 import static com.system.orders.ItemToOrder.chooseItem;
@@ -23,6 +24,7 @@ public class UserImp implements User {
         this.username = username;
         this.password = password;
         this.cart = new ShoppingCart(this);
+        this.orders = new ArrayList<>();
     }
 
     public ShoppingCart getCart() {
@@ -31,6 +33,10 @@ public class UserImp implements User {
 
     public void setCart(ShoppingCart cart) {
         this.cart = cart;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 
     @Override
@@ -45,7 +51,11 @@ public class UserImp implements User {
 
     @Override
     public void placeOrder() {
-
+        double totalPrice = 0;
+        for (ItemToOrder item : this.cart.getCart()) {
+            totalPrice += item.getItem().getPrice() * item.getQuantity();
+        }
+        this.orders.add(new Order(new Date(), this, totalPrice, this.cart.getCart()));
         System.out.println("Order placed!");
     }
 
@@ -90,9 +100,10 @@ public class UserImp implements User {
         boolean isValid = false;
         while (!isValid) {
             for (ItemToOrder item : cart.getCart()) {
-                if (item.getItem().getName().equals(name)) {
+                if (item.getItem().getName().equalsIgnoreCase(name)) {
                     this.cart.removeItemFromShoppingCart(item);
                     isValid = true;
+                    break;
                 }
             }
 
