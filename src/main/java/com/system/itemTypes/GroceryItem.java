@@ -1,6 +1,5 @@
 package com.system.itemTypes;
 
-import com.system.interfaces.Breakable;
 import com.system.interfaces.Perishable;
 
 public class GroceryItem extends InventoryItem implements Perishable {

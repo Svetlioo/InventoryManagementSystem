@@ -21,10 +21,6 @@ public class Methods {
     }
 
     public static void displayTestAccount() {
-//        System.out.println("         Test accounts         ");
-//        System.out.println("username: test          ");
-//        System.out.println("password: 123           ");
-//        System.out.println();
         System.out.println("Test Accounts:");
         System.out.println("-".repeat(20));
         System.out.println("User account:");

@@ -1,8 +1,5 @@
 package com.system.itemTypes;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.UUID;
 
 public class InventoryItem extends AbstractItem {

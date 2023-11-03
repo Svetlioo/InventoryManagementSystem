@@ -1,6 +1,5 @@
 package com.system.CLI;
 
-import com.system.authentication.Admin;
 import com.system.authentication.AdminImp;
 import com.system.authentication.User;
 import com.system.helperMethods.Methods;
