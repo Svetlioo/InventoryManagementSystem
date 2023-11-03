@@ -35,16 +35,17 @@ public class ShoppingCart {
 
     public void removeItemFromShoppingCart(ItemToOrder itemOrdered) {
         cart.remove(itemOrdered);
+        itemOrdered.getItem().setQuantity(itemOrdered.getItem().getQuantity() + itemOrdered.getQuantity());
         System.out.printf("%s removed from shopping cart!%n", itemOrdered.getItem().getName());
     }
 
     public boolean changeQuantityOfProduct(ItemToOrder itemOrdered, int quantity) {
         if (itemOrdered.getItem().getQuantity() + itemOrdered.getQuantity() >= quantity) {
+            itemOrdered.getItem().setQuantity(itemOrdered.getItem().getQuantity() - itemOrdered.getQuantity() + quantity);
             itemOrdered.setQuantity(quantity);
-            itemOrdered.getItem().setQuantity(quantity);
         } else {
             System.out.printf("Not enough items! Only %d %s left!%n", itemOrdered.getItem().getQuantity(), itemOrdered.getItem().getName());
-            System.out.printf("Max items that you can add: %d%n", itemOrdered.getQuantity() + itemOrdered.getItem().getQuantity());
+            System.out.printf("Max items that you can set: %d%n", itemOrdered.getQuantity() + itemOrdered.getItem().getQuantity());
             return false;
         }
 
